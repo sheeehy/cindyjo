@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background: #000;
+}
+
+.gallery {
+  overflow: hidden;
+  position: relative;
+}
+
+.img {
+  position: absolute;
+  visibility: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}

@@ -1,0 +1,48 @@
+import React from "react";
+import Link from "next/link";
+import FadeInAnimation from "./FadeInAnimation";
+import { BsTwitterX, BsInstagram, BsEnvelope } from "react-icons/bs";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { TfiMenu } from "react-icons/tfi";
+
+export default function Navbar() {
+  return (
+    <div>
+      <nav className="flex justify-between z-50  tracking-wider text-xl text-white sm:px-8 sm:py-4 px-4 py-2 ">
+        <Link href="/" className="font-semibold select-none hover:opacity-70 transition ease-in-out">
+          JORDONFILES{" "}
+        </Link>
+
+        <Sheet>
+          <SheetTrigger>
+            <TfiMenu />
+          </SheetTrigger>
+          <SheetContent side="right" className="bg-black select-none text-2xl z-50 ">
+            <SheetHeader className="flex flex-col justify-center h-full">
+              <div className="flex flex-col justify-center gap-4 flex-1">
+                <Link href="/gallery" className="select-none hover:opacity-70 transition ease-in-out pl-4 ">
+                  GALLERY
+                </Link>
+                <Link href="/contact" className="select-none hover:opacity-70 transition ease-in-out pl-4 mb-8">
+                  CONTACT
+                </Link>
+                <Link target="_blank" href="https://www.instagram.com/jordonfiles/" className="select-none hover:opacity-70 transition font-normal text-zinc-400 ease-in-out pl-4">
+                  INSTAGRAM
+                </Link>
+                <Link href="https://twitter.com/JORDONFILES" target="_blank" className="select-none hover:opacity-70 transition text-zinc-400  ease-in-out pl-4">
+                  TWITTER
+                </Link>
+                <Link href="mailto:jordonfilesbooking@gmail.com" target="_blank" className="select-none hover:opacity-70 transition text-zinc-400  ease-in-out pl-4">
+                  EMAIL
+                </Link>
+              </div>
+              <Link href="https://remise.ie" target="_blank" className="select-none hover:opacity-70 transition ease-in-out pl-4">
+                <h1 className="text-sm text-zinc-400">Site Credits</h1>
+              </Link>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
+      </nav>
+    </div>
+  );
+}
