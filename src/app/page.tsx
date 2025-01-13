@@ -10,7 +10,6 @@ export default function page() {
       <FadeInAnimation duration={1} delay={3.25} ease={[0.33, 0.2, 0, 1]}>
         <Navbar />
       </FadeInAnimation>
-      <Intro />
     </div>
   );
 }
