@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Gallery from "../components/Gallery";
 import { client } from "../lib/sanity";
 
-export const revalidate = 3600; // revalidate at most every hour
+export const revalidate = 0; // revalidate at most every hour
 
 async function getData() {
   const query = `*[_type == "imagetype"]{

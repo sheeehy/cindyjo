@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Link from "next/link";
+import Footer from "./components/Footer";
 
 export const revalidate = 60; // revalidate at most every hour
 

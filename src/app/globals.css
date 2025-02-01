@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "PP Neue Montreal", sans-serif;
+  overflow-x: hidden;
+  background-color: black;
+}
+
+h1,
+p {
+  font-family: "PP Neue Montreal", sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

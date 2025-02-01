@@ -1,0 +1,96 @@
+.sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.galleryWrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 160vw;
+  height: 100vh;
+  display: flex;
+  gap: 3em;
+}
+
+.col {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  will-change: transform;
+}
+
+.img {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.img.main img {
+  position: relative;
+  transform: scale(2);
+  will-change: transform;
+}
+
+.ws,
+.outro {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+}
+
+.hero {
+  width: 100vw;
+  height: 80vh;
+  color: white;
+}
+
+.outro {
+  position: relative;
+  width: 100vw;
+  height: 101vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  padding: 2em;
+  color: white;
+}
+
+.hero {
+  background-color: rgba(0, 0, 0, 1);
+  backdrop-filter: blur(12px);
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100vw;
+  height: 70vh;
+  padding: 2em;
+  overflow: hidden;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 0em 0;
+  background-color: black;
+  color: white;
+}
+
+.ws {
+  width: 100vw;
+  height: 500vh;
+  background-color: transparent;
+}

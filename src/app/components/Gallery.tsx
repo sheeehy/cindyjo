@@ -56,8 +56,9 @@ const ImageCard: React.FC<{ item: ImageData; index: number }> = ({ item, index }
         width={item.image.metadata.dimensions.width}
         height={item.image.metadata.dimensions.height}
         className="w-full h-auto object-cover transition-transform duration-300 ease-in-out hover:scale-105"
-        loading="lazy"
-        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+        quality={100}
+        unoptimized
+        loading="eager"
       />
     </motion.div>
   );

@@ -9,13 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-navigation-menu": "^1.1.4",
+    "@studio-freight/react-lenis": "^0.0.47",
     "@types/gsap": "^3.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.17.0",
-    "gsap": "^3.12.5",
+    "gsap": "^3.12.7",
     "lucide-react": "^0.378.0",
     "next": "14.2.3",
     "next-sanity": "^9.0.13",
