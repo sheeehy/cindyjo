@@ -112,14 +112,15 @@ export default function Home() {
       {/* MOBILE (Below 'sm') - Single Portrait Image */}
       <div className="block sm:hidden relative w-screen h-screen overflow-hidden">
         <Image src="/cj5.png" alt="" fill style={{ objectFit: "cover" }} />
-        <div className="absolute bottom-0 w-full p-4 text-white">
+        <div className="absolute bottom-20 w-full p-4 text-white">
+          {" "}
+          {/* Moved text elements higher on mobile */}
           <motion.h1 className="text-4xl mb-2" initial="hidden" animate="visible" variants={headingVariants}>
             CINDY JORGJI
           </motion.h1>
           <motion.h2 className="text-lg mb-4" initial="hidden" animate="visible" variants={subheadingVariants}>
             PHOTOGRAPHER
           </motion.h2>
-
           <motion.div className="flex flex-col space-y-2 text-2xl" initial="hidden" animate="visible" variants={linkContainerVariants}>
             <motion.div variants={linkItemVariants}>
               <AnimatedLink href="/about">ABOUT</AnimatedLink>
@@ -214,10 +215,10 @@ export default function Home() {
 
           <section className={styles.ws}></section>
 
-          <section>
+          <section className="">
             <div className={styles.outro}>
               <motion.div
-                className="absolute bottom-44 sm:bottom-32 left-4 sm:left-8 text-4xl sm:text-5xl md:text-7xl flex flex-col space-y-2"
+                className="absolute bottom-44 sm:bottom-24 left-4 sm:left-8 text-4xl sm:text-5xl md:text-7xl flex flex-col space-y-2"
                 initial="hidden"
                 animate="visible"
                 variants={linkContainerVariants}
