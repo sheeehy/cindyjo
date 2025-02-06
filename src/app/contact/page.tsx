@@ -2,43 +2,33 @@
 import React, { useEffect, useRef } from "react";
 import Navbar from "@/app/components/Navbar";
 import { gsap } from "gsap";
+import Image from "next/image";
+import Link from "next/link";
+import Nav from "../components/Nav";
 
-export default function Page() {
+export default function Contact() {
   return (
-    <main className="overflow-hidden">
-      <Navbar />
-      <div className="relative flex flex-col sm:justify-center sm:items-center mt-32 mb-6 px-4 sm:px-12 gap-4 text-sm select-none">
-        <a href="mailto:jordonfilesbooking@gmail.com" className="sm:text-7xl text-5xl sm:mt-32  bg-zinc-900 px-4 py-4 rounded-xl hover:bg-opacity-75 transition ease-in-out">
-          Book Now
-        </a>
-        <div className="gap-4 sm:gap-14 flex flex-col sm:flex-row mt-4">
-          <div className="">
-            <a
-              className="text-left max-w-xl text-zinc-400 hover:text-white transition ease-in-out "
-              href="https://www.instagram.com/jordonfiles/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
-          </div>
-          <div className="">
-            <a className="text-left max-w-xl text-zinc-400 hover:text-white transition ease-in-out " href="https://x.com/JORDONFILES" target="_blank" rel="noopener noreferrer">
-              Twitter{" "}
-            </a>
-          </div>
-          <div className="">
-            <a
-              className="text-left max-w-xl text-zinc-400 hover:text-white transition ease-in-out "
-              href="mailto:jordonfilesbooking@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Email
-            </a>
+    <div>
+      <Nav />
+      <div className="min-h-screen bg-black text-white flex flex-col md:flex-row items-end justify-center p-8">
+        <div className="mb-8 md:mb-0 md:w-1/2">
+          <h1 className="text-6xl md:text-8xl mb-6">CONTACT</h1>
+          <div className="sm:ml-2 ml-0 flex space-x-6 ">
+            <div>
+              <Link href="https://www.instagram.com/cindyyjo/" target="_blank">
+                INSTAGRAM
+              </Link>
+            </div>
+            <div>
+              <Link href="mailto:cindyjorgji2002@gmail.com">EMAIL</Link>
+            </div>
           </div>
         </div>
+        <div className="gap-8 flex items-center justify-center">
+          <Image src="/c2.jpg" alt="Silhouette" width={288} height={288} className="h-72 w-auto object-cover" />
+          <Image src="/c7.jpg" alt="Silhouette" width={288} height={288} className="h-72 w-auto object-cover" />
+        </div>
       </div>
-    </main>
+    </div>
   );
 }

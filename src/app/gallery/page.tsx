@@ -1,37 +1,57 @@
-import React from "react";
-import Navbar from "../components/Navbar";
-import Gallery from "../components/Gallery";
-import { client } from "../lib/sanity";
+"use client";
 
-export const revalidate = 0; // revalidate at most every hour
+import { useState } from "react";
+import Image from "next/image";
+import Nav from "../components/Nav";
+import CustomLightbox from "../components/CustomLightbox";
+import ReactLenis from "@studio-freight/react-lenis";
+import { motion } from "framer-motion";
 
-async function getData() {
-  const query = `*[_type == "imagetype"]{
-    _id,
-    name,
-    "image": image.asset->{
-      _id,
-      url,
-      metadata {
-        dimensions
-      }
-    }
-  }
-`;
+const images = ["/c1.jpg", "/c2.jpg", "/c3.jpg", "/c6.jpg", "/c5.jpg", "/c4.jpg", "/c7.jpg", "/c2.jpg", "/c3.jpg", "/c1.jpg", "/c5.jpg", "/c4.jpg"];
 
-  const data = await client.fetch(query);
-  return data;
-}
+export default function Gallery() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-export default async function GalleryPage() {
-  const data = await getData();
+  const openLightbox = (index: number) => {
+    setCurrentIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+  };
 
   return (
-    <>
-      <Navbar />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 mt-32 mb-24">
-        <Gallery images={data} />
-      </main>
-    </>
+    <ReactLenis root className="w-full">
+      <div className="min-h-screen bg-black text-white">
+        <Nav />
+        <main className="px-4 sm:px-8 mx-auto sm:pt-52 pt-24 pb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8">
+            {images.map((src, index) => (
+              <motion.div
+                key={src}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2, duration: 0.35 }}
+                className="aspect-[3/4] relative cursor-pointer mb-4 sm:mb-0"
+                onClick={() => openLightbox(index)}
+              >
+                <Image src={src || "/placeholder.svg"} alt={`Gallery image ${index + 1}`} layout="fill" objectFit="cover" className="rounded-lg" />
+              </motion.div>
+            ))}
+          </div>
+        </main>
+        <CustomLightbox isOpen={lightboxOpen} onClose={closeLightbox} images={images} currentIndex={currentIndex} onPrev={goToPrevious} onNext={goToNext} />
+      </div>
+    </ReactLenis>
   );
 }

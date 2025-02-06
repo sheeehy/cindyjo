@@ -202,11 +202,11 @@ export default function Home() {
 
         <div className={styles.container} ref={container}>
           <section className={styles.hero}>
-            <div className="relative flex flex-col w-full justify-start text-white -mb-2 px-4 sm:px-8">
+            <div className="relative flex flex-col w-full justify-start text-white -mb-2 px-4 sm:px-8 sm:pb-0 ">
               <motion.h1 className="text-4xl sm:text-6xl md:text-8xl" initial="hidden" animate="visible" variants={headingVariants}>
                 CINDY JORGJI
               </motion.h1>
-              <motion.h2 className="text-lg sm:text-xl md:text-2xl mt-2" initial="hidden" animate="visible" variants={subheadingVariants}>
+              <motion.h2 className="text-lg sm:text-xl md:text-2xl ml-0 sm:ml-3 mb-4" initial="hidden" animate="visible" variants={subheadingVariants}>
                 PHOTOGRAPHER
               </motion.h2>
             </div>
