@@ -112,7 +112,7 @@ export default function Home() {
       {/* MOBILE (Below 'sm') - Single Portrait Image */}
       <div className="block sm:hidden relative w-screen h-screen overflow-hidden">
         <Image src="/cj5.png" alt="" fill style={{ objectFit: "cover" }} />
-        <div className="absolute bottom-20 w-full p-4 text-white">
+        <div className="absolute bottom-28 w-full p-4 text-white">
           {" "}
           {/* Moved text elements higher on mobile */}
           <motion.h1 className="text-4xl mb-2" initial="hidden" animate="visible" variants={headingVariants}>
