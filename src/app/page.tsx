@@ -7,7 +7,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import ReactLenis from "@studio-freight/react-lenis";
 import { motion } from "framer-motion";
 import styles from "./page.module.css";
-import Nav from "../../src/app/components/Nav";
 import AnimatedLink from "../../src/app/components/AnimatedLink";
 
 export default function Home() {
@@ -107,8 +106,6 @@ export default function Home() {
 
   return (
     <ReactLenis root className="w-full h-[800vh]">
-      <Nav />
-
       {/* MOBILE (Below 'sm') - Single Portrait Image */}
       <div className="block sm:hidden relative w-screen h-screen overflow-hidden">
         <Image src="/cj5.png" alt="" fill style={{ objectFit: "cover" }} />

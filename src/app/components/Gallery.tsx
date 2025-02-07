@@ -1,9 +1,9 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ReactLenis from "@studio-freight/react-lenis";
 
 interface ImageData {
   _id: string;
@@ -19,22 +19,8 @@ interface ImageData {
   };
 }
 
-const Gallery: React.FC<{ images: ImageData[] }> = ({ images }) => {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {images.map((item, index) => (
-        <ImageCard key={item._id} item={item} index={index} />
-      ))}
-    </div>
-  );
-};
-
-const ImageCard: React.FC<{ item: ImageData; index: number }> = ({ item, index }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-    rootMargin: "0px 0px -100px 0px",
-  });
+function ImageCard({ item, index }: { item: ImageData; index: number }) {
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const variants = {
     hidden: { opacity: 0, y: 10 },
@@ -58,10 +44,19 @@ const ImageCard: React.FC<{ item: ImageData; index: number }> = ({ item, index }
         className="w-full h-auto object-cover transition-transform duration-300 ease-in-out hover:scale-105"
         quality={100}
         unoptimized
-        loading="eager"
       />
     </motion.div>
   );
-};
+}
 
-export default Gallery;
+export default function Gallery({ images }: { images: ImageData[] }) {
+  return (
+    <ReactLenis>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-20">
+        {images.map((item, index) => (
+          <ImageCard key={item._id} item={item} index={index} />
+        ))}
+      </div>
+    </ReactLenis>
+  );
+}

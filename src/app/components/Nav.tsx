@@ -1,4 +1,5 @@
-import type React from "react";
+"use client";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedLink from "./AnimatedLink";

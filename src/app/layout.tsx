@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import Footer from "./components/Footer";
+import Nav from "./components/Nav";
 
 export const revalidate = 60; // revalidate at most every hour
 
@@ -19,7 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="text-black">
-      <body className={outfit.className}>{children}</body>
+      <body className={outfit.className}>
+        <Nav />
+        {children}
+      </body>
     </html>
   );
 }

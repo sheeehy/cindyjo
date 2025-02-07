@@ -33,7 +33,6 @@ export default function Gallery() {
   return (
     <ReactLenis root className="w-full">
       <div className="min-h-screen bg-black text-white">
-        <Nav />
         <main className="px-4 sm:px-8 mx-auto sm:pt-52 pt-24 pb-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8">
             {images.map((src, index) => (
