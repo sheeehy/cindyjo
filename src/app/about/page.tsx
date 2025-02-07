@@ -34,7 +34,7 @@ export default function Contact() {
             </h1>
           </div>
 
-          <div className="mt-24 flex flex-col justify-end items-end sm:justify-end sm:items-end sm:flex-row gap-8">
+          <div className="mt-24 flex flex-col justify-center items-center sm:justify-end sm:items-end sm:flex-row gap-8">
             <div className="flex flex-col sm:flex-row gap-8">
               <Image ref={image1Ref} src="/c2.jpg" alt="Silhouette" width={288} height={288} className="w-full sm:w-auto h-auto sm:h-72 object-cover" />
               <Image ref={image2Ref} src="/c7.jpg" alt="Silhouette" width={288} height={288} className="w-full sm:w-auto h-auto sm:h-72 object-cover" />
