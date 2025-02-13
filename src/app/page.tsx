@@ -14,6 +14,8 @@ export default function Home() {
   const galleryWrapperRef = useRef<HTMLDivElement>(null);
   const mainImgRef = useRef<HTMLImageElement>(null);
 
+  const BASE_DELAY = 2.5;
+
   useGSAP(
     () => {
       if (typeof window !== "undefined" && window.innerWidth >= 640) {
@@ -66,7 +68,11 @@ export default function Home() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.4 },
+      transition: {
+        duration: 0.7,
+        ease: [0.16, 1, 0.3, 1],
+        delay: BASE_DELAY + 0.2,
+      },
     },
   };
 
@@ -75,7 +81,11 @@ export default function Home() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.5 },
+      transition: {
+        duration: 0.7,
+        ease: [0.16, 1, 0.3, 1],
+        delay: BASE_DELAY + 0.4,
+      },
     },
   };
 
@@ -84,14 +94,21 @@ export default function Home() {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.8 },
+      transition: {
+        duration: 0.7,
+        ease: [0.16, 1, 0.3, 1],
+        delay: BASE_DELAY + 0.8,
+      },
     },
   };
 
   const linkContainerVariants = {
     hidden: {},
     visible: {
-      transition: { delayChildren: 1.05, staggerChildren: 0.15 },
+      transition: {
+        delayChildren: BASE_DELAY + 0.6,
+        staggerChildren: 0.15,
+      },
     },
   };
 
@@ -106,12 +123,15 @@ export default function Home() {
 
   return (
     <ReactLenis root className="w-full h-[800vh]">
-      {/* MOBILE (Below 'sm') - Single Portrait Image */}
       <div className="block sm:hidden relative w-screen h-screen overflow-hidden">
-        <Image src="/cj5.png" alt="" fill style={{ objectFit: "cover" }} />
+        <video
+          src="https://xdqngnlfkv.ufs.sh/f/MzupEjSBUV0CcudJFNEYrDU7KXq0R21JQcHNPxVjT3fBLhn8"
+          autoPlay
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute bottom-28 w-full p-4 text-white">
-          {" "}
-          {/* Moved text elements higher on mobile */}
           <motion.h1 className="text-4xl mb-2" initial="hidden" animate="visible" variants={headingVariants}>
             CINDY JORGJI
           </motion.h1>
@@ -119,9 +139,6 @@ export default function Home() {
             PHOTOGRAPHER
           </motion.h2>
           <motion.div className="flex flex-col space-y-2 text-2xl" initial="hidden" animate="visible" variants={linkContainerVariants}>
-            <motion.div variants={linkItemVariants}>
-              <AnimatedLink href="/about">ABOUT</AnimatedLink>
-            </motion.div>
             <motion.div variants={linkItemVariants}>
               <AnimatedLink href="/gallery">GALLERY</AnimatedLink>
             </motion.div>
@@ -132,7 +149,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* DESKTOP (From 'sm' and up) - Original Scroll Animation */}
       <div className="hidden sm:block">
         <motion.section className={styles.sticky} initial="hidden" animate="visible" variants={imageVariants}>
           <div className={styles.galleryWrapper} ref={galleryWrapperRef}>
