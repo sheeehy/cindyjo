@@ -58,6 +58,15 @@ export default function Contact() {
                   INSTAGRAM
                 </Link>
                 <Link
+                  href="https://x.com/CindyJorgji"
+                  target="_blank"
+                  ref={(el) => {
+                    linkRefs.current[0] = el;
+                  }}
+                >
+                  TWITTER
+                </Link>
+                <Link
                   href="mailto:cindyjorgji2002@gmail.com"
                   ref={(el) => {
                     linkRefs.current[1] = el;

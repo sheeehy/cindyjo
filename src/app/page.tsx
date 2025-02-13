@@ -221,9 +221,6 @@ export default function Home() {
                 variants={linkContainerVariants}
               >
                 <motion.div variants={linkItemVariants}>
-                  <AnimatedLink href="/about">ABOUT</AnimatedLink>
-                </motion.div>
-                <motion.div variants={linkItemVariants}>
                   <AnimatedLink href="/gallery">GALLERY</AnimatedLink>
                 </motion.div>
                 <motion.div variants={linkItemVariants}>
@@ -236,9 +233,12 @@ export default function Home() {
                   <p>&copy; {new Date().getFullYear()} CINDY JORGJI</p>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0">
-                  <AnimatedLink href="mailto:cindyjorgji2002@gmail.com">EMAIL</AnimatedLink>
+                  <AnimatedLink href="mailto:cindyjorgji.contact@gmail.com">EMAIL</AnimatedLink>
                   <AnimatedLink href="https://www.instagram.com/cindyyjo/" target="_blank">
                     INSTAGRAM
+                  </AnimatedLink>
+                  <AnimatedLink href="https://x.com/CindyJorgji" target="_blank">
+                    TWITTER
                   </AnimatedLink>
                 </div>
                 <div>

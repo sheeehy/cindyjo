@@ -47,6 +47,11 @@ const Nav: React.FC = () => {
             </AnimatedLink>
           </motion.div>
           <motion.div variants={itemVariants}>
+            <AnimatedLink href="https://x.com/CindyJorgji" target="_blank">
+              TWITTER
+            </AnimatedLink>
+          </motion.div>
+          <motion.div variants={itemVariants}>
             <AnimatedLink href="mailto:cindyjorgji2002@gmail.com">EMAIL</AnimatedLink>
           </motion.div>
         </div>
@@ -57,9 +62,6 @@ const Nav: React.FC = () => {
           </motion.div>
           <motion.div variants={itemVariants}>
             <AnimatedLink href="/gallery">GALLERY</AnimatedLink>
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <AnimatedLink href="/about">ABOUT</AnimatedLink>
           </motion.div>
         </div>
 

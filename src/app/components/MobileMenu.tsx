@@ -61,11 +61,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   GALLERY
                 </Link>
               </motion.div>
-              <motion.div variants={linkVariants} custom={2} initial="hidden" animate="visible" className="my-4">
-                <Link href="/about" className="text-2xl font" onClick={onClose}>
-                  ABOUT
-                </Link>
-              </motion.div>
+
               <motion.div variants={linkVariants} custom={3} initial="hidden" animate="visible" className="my-4">
                 <Link href="/contact" className="text-2xl" onClick={onClose}>
                   CONTACT
@@ -76,8 +72,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   INSTAGRAM
                 </Link>
               </motion.div>
+              <motion.div variants={linkVariants} custom={4} initial="hidden" animate="visible" className="my-4">
+                <Link href="https://x.com/CindyJorgji" target="_blank" className="text-2xl" onClick={onClose}>
+                  TWITTER
+                </Link>
+              </motion.div>
               <motion.div variants={linkVariants} custom={5} initial="hidden" animate="visible" className="my-4">
-                <Link href="mailto:cindyjorgji2002@gmail.com" className="text-2xl" onClick={onClose}>
+                <Link href="mailto:cindyjorgji.contact@gmail.com" className="text-2xl" onClick={onClose}>
                   EMAIL
                 </Link>
               </motion.div>
