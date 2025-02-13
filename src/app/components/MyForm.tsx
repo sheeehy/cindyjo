@@ -36,9 +36,9 @@ export default function MyForm() {
 
   if (state.succeeded) {
     return (
-      <p className="text-left text-lg sm:text-xl">
+      <p className="text-center text-lg sm:text-xl">
         Thanks for reaching out!
-        <br /> I'll get back to you as soon as possible.
+        <br /> I&apos;ll get back to you as soon as possible.
       </p>
     );
   }
