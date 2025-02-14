@@ -14,7 +14,7 @@ export default function Home() {
   const galleryWrapperRef = useRef<HTMLDivElement>(null);
   const mainImgRef = useRef<HTMLImageElement>(null);
 
-  const BASE_DELAY = 2.5;
+  const BASE_DELAY = 0.2;
 
   useGSAP(
     () => {
@@ -127,6 +127,7 @@ export default function Home() {
         <video
           src="https://xdqngnlfkv.ufs.sh/f/MzupEjSBUV0CcudJFNEYrDU7KXq0R21JQcHNPxVjT3fBLhn8"
           autoPlay
+          preload="auto"
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
