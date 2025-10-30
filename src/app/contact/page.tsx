@@ -21,6 +21,12 @@ const itemVariants = {
 export default function Contact() {
   return (
     <motion.div variants={containerVariants} initial="hidden" animate="show" className="min-h-screen bg-black text-white flex flex-col px-4 py-8 sm:p-8 lg:p-16 mt-32">
+      <motion.div variants={itemVariants} className="flex items-center justify-center mb-24 ">
+      
+      <div className=" text-5xl max-w-2xl">Share your vision - What kind of shoot are you looking to do?
+      </div>
+      </motion.div>
+      
       <motion.div variants={itemVariants} className="w-full">
         <MyForm />
       </motion.div>
